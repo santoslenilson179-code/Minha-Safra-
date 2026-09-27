@@ -1,0 +1,6 @@
+{
+  "name": "Minha Safra - Controle Simples da Sua Produção",
+  "description": "Anote seus gastos, produção e vendas pelo celular e acompanhe seus números de forma simples. Feito para quem vive da produção rural.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
