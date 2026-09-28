@@ -2,12 +2,16 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Dor from './components/Dor';
-import Solucao from './components/Solucao';
-import Demonstracao from './components/Demonstracao';
+import HomeOverview from './components/HomeOverview';
 import ComoFunciona from './components/ComoFunciona';
+import FluxoFaixa from './components/FluxoFaixa';
+import MockupGastos from './components/MockupGastos';
+import MockupProducao from './components/MockupProducao';
+import MockupVendas from './components/MockupVendas';
+import MockupResultado from './components/MockupResultado';
+import MockupWhatsAppDual from './components/MockupWhatsAppDual';
+import CampoConexao from './components/CampoConexao';
 import Beneficios from './components/Beneficios';
-import WhatsAppSection from './components/WhatsAppSection';
-import Jornada from './components/Jornada';
 import Simplicidade from './components/Simplicidade';
 import Oferta from './components/Oferta';
 import Faq from './components/Faq';
@@ -20,51 +24,61 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 font-sans">
-      {/* 1. Header with strict top bar contract */}
+      {/* Top Header */}
       <Header onOpenCheckout={() => setIsCheckoutOpen(true)} />
 
       <main className="flex-1">
-        {/* 2. Hero — Uma única mensagem */}
+        {/* 01 — HERO: Dor + solução + fotografia do trator e plantação */}
         <Hero />
 
-        {/* 3. Segunda dobra — Aprofundar a dor */}
+        {/* 02 — PROBLEMA: Informações espalhadas no dia a dia */}
         <Dor />
 
-        {/* 4. Terceira dobra — Entregar a solução */}
-        <Solucao />
+        {/* 03 — APRESENTAÇÃO: Grande mockup da Home real */}
+        <HomeOverview />
 
-        {/* 5. Demonstração — Mostrar em vez de explicar */}
-        <Demonstracao />
-
-        {/* 6. Como funciona — Três passos */}
+        {/* 04 — COMO FUNCIONA: 3 passos + Faixa de fluxo */}
         <ComoFunciona />
+        <FluxoFaixa />
 
-        {/* 7. Benefícios — Feito para facilitar */}
+        {/* 05 — GASTOS: Mockup registrar gasto (Texto esq / Mockup dir) */}
+        <MockupGastos />
+
+        {/* 06 — PRODUÇÃO: Mockup registrar produção (Mockup esq / Texto dir) */}
+        <MockupProducao />
+
+        {/* 07 — VENDAS: Mockup registrar venda (Texto esq / Mockup dir) */}
+        <MockupVendas />
+
+        {/* 08 — RESULTADO: Grande mockup do resultado em verde floresta */}
+        <MockupResultado />
+
+        {/* 09 — OFERTA / WHATSAPP: Demonstração com 2 celulares */}
+        <MockupWhatsAppDual />
+
+        {/* 11 — CONEXÃO DO CAMPO AO APP: Fotografia rural + Smartphone em 1º plano */}
+        <CampoConexao />
+
+        {/* 12 — BENEFÍCIOS: Grade dos recursos do app (+ Vendi / - Gastei / WhatsApp...) */}
         <Beneficios />
 
-        {/* 8. WhatsApp — Benefício simples */}
-        <WhatsAppSection />
-
-        {/* 9. Jornada — Do campo à venda */}
-        <Jornada />
-
-        {/* 10. Quebrar a objeção "É difícil" */}
+        {/* 13 — SIMPLICIDADE: Letras grandes + botões fáceis + celular */}
         <Simplicidade />
 
-        {/* 11. Oferta — Pagamento único R$ 20 */}
+        {/* 14 — OFERTA COMERCIAL: R$20 pagamento único */}
         <Oferta onOpenCheckout={() => setIsCheckoutOpen(true)} />
 
-        {/* 12. FAQ — 5 Objeções reais */}
+        {/* 15 — FAQ: Dúvidas principais */}
         <Faq />
 
-        {/* 13. Fechamento — Rural sunset + CTA */}
+        {/* 16 — CTA FINAL: Fotografia rural entardecer + CTA */}
         <Fechamento onOpenCheckout={() => setIsCheckoutOpen(true)} />
       </main>
 
-      {/* 14. Quiet Footer */}
+      {/* FOOTER */}
       <Footer />
 
-      {/* 15. Real Interactive Checkout Modal */}
+      {/* CHECKOUT MODAL */}
       <CheckoutModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}
