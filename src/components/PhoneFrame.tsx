@@ -2,9 +2,10 @@ import React from 'react';
 
 interface PhoneFrameProps {
   children: React.ReactNode;
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'whatsapp';
   className?: string;
   badge?: string;
+  withSpotlight?: boolean;
 }
 
 export default function PhoneFrame({
@@ -12,11 +13,22 @@ export default function PhoneFrame({
   variant = 'light',
   className = '',
   badge,
+  withSpotlight = true,
 }: PhoneFrameProps) {
+  const isDarkish = variant === 'dark' || variant === 'whatsapp';
+
   return (
-    <div className={`relative mx-auto w-full max-w-[340px] sm:max-w-[380px] ${className}`}>
-      {/* Outer Phone Shell */}
-      <div className="relative rounded-[48px] p-3 sm:p-3.5 bg-[#142319] shadow-2xl shadow-emerald-950/30 border-4 border-stone-800/80 ring-1 ring-black/40">
+    <div className={`relative mx-auto w-full max-w-[340px] sm:max-w-[380px] group ${className}`}>
+      {/* Soft Spotlight atrás do celular */}
+      {withSpotlight && (
+        <div
+          className={isDarkish ? 'phone-soft-spotlight-forest' : 'phone-soft-spotlight'}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Outer Phone Shell with Phone Depth Reveal transition */}
+      <div className="relative rounded-[48px] p-3 sm:p-3.5 bg-[#142319] shadow-2xl shadow-emerald-950/35 border-4 border-stone-800/80 ring-1 ring-black/40 transition-transform duration-500 ease-out group-hover:scale-[1.01]">
         {/* Dynamic Island / Speaker Notch */}
         <div className="absolute top-4 sm:top-4.5 left-1/2 -translate-x-1/2 z-30 h-4 w-28 bg-[#0a120c] rounded-full flex items-center justify-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-stone-900 border border-stone-800/80" />
@@ -26,7 +38,11 @@ export default function PhoneFrame({
         {/* Screen Display */}
         <div
           className={`relative rounded-[38px] overflow-hidden min-h-[580px] sm:min-h-[620px] flex flex-col justify-between ${
-            variant === 'dark' ? 'bg-[#0E1E14] text-stone-100' : 'bg-[#FAF8F5] text-stone-900'
+            variant === 'whatsapp'
+              ? 'bg-[#0B141A] text-stone-100'
+              : variant === 'dark'
+              ? 'bg-[#0E1E14] text-stone-100'
+              : 'bg-[#FAF8F5] text-stone-900'
           }`}
         >
           {/* Top Status Bar Bar */}
@@ -50,9 +66,9 @@ export default function PhoneFrame({
         </div>
       </div>
 
-      {/* Floating Badge (optional) */}
+      {/* Floating Badge */}
       {badge && (
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-stone-200 text-xs font-bold text-stone-800 whitespace-nowrap z-20">
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-stone-200 text-xs font-bold text-stone-800 whitespace-nowrap z-20 transition-transform duration-300 group-hover:-translate-y-0.5">
           {badge}
         </div>
       )}

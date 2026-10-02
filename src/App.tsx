@@ -4,11 +4,8 @@ import Hero from './components/Hero';
 import Dor from './components/Dor';
 import HomeOverview from './components/HomeOverview';
 import ComoFunciona from './components/ComoFunciona';
-import FluxoFaixa from './components/FluxoFaixa';
-import MockupGastos from './components/MockupGastos';
-import MockupProducao from './components/MockupProducao';
-import MockupVendas from './components/MockupVendas';
-import MockupResultado from './components/MockupResultado';
+import StickyProductShowcase from './components/StickyProductShowcase';
+import HarvestProgressLine from './components/HarvestProgressLine';
 import MockupWhatsAppDual from './components/MockupWhatsAppDual';
 import CampoConexao from './components/CampoConexao';
 import Beneficios from './components/Beneficios';
@@ -37,41 +34,41 @@ export default function App() {
         {/* 03 — APRESENTAÇÃO: Grande mockup da Home real */}
         <HomeOverview />
 
-        {/* 04 — COMO FUNCIONA: 3 passos + Faixa de fluxo */}
+        {/* 04 — COMO FUNCIONA: 3 passos objetivos */}
         <ComoFunciona />
-        <FluxoFaixa />
 
-        {/* 05 — GASTOS: Mockup registrar gasto (Texto esq / Mockup dir) */}
-        <MockupGastos />
+        {/* 05 — STICKY PRODUCT SHOWCASE:
+            No Desktop: celular sticky à esquerda (top: 100px) trocando suavemente
+            as 4 telas reais (Gastos, Produção, Vendas, Resultado) conforme o visitante
+            rola os passos 01, 02, 03, 04 à direita.
+            No Mobile: sequência vertical limpa com mockups proporcionais. */}
+        <StickyProductShowcase />
 
-        {/* 06 — PRODUÇÃO: Mockup registrar produção (Mockup esq / Texto dir) */}
-        <MockupProducao />
+        {/* 06 — HARVEST PROGRESS LINE:
+            Continuidade visual direta da linha do showcase, resumindo a jornada
+            GASTEI → PRODUZI → VENDI → ACOMPANHEI com preenchimento em scroll,
+            fechando com o selo "Tudo organizado. Sem complicação." e a ponte para o WhatsApp. */}
+        <HarvestProgressLine />
 
-        {/* 07 — VENDAS: Mockup registrar venda (Texto esq / Mockup dir) */}
-        <MockupVendas />
-
-        {/* 08 — RESULTADO: Grande mockup do resultado em verde floresta */}
-        <MockupResultado />
-
-        {/* 09 — OFERTA / WHATSAPP: Demonstração com 2 celulares */}
+        {/* 07 — OFERTA / WHATSAPP: Demonstração com 2 celulares */}
         <MockupWhatsAppDual />
 
-        {/* 11 — CONEXÃO DO CAMPO AO APP: Fotografia rural + Smartphone em 1º plano */}
+        {/* 08 — CONEXÃO DO CAMPO AO APP: Fotografia rural + Smartphone em 1º plano */}
         <CampoConexao />
 
-        {/* 12 — BENEFÍCIOS: Grade dos recursos do app (+ Vendi / - Gastei / WhatsApp...) */}
+        {/* 09 — BENEFÍCIOS: Grade dos recursos do app (+ Vendi / - Gastei / WhatsApp...) */}
         <Beneficios />
 
-        {/* 13 — SIMPLICIDADE: Letras grandes + botões fáceis + celular */}
+        {/* 10 — SIMPLICIDADE: Letras grandes + botões fáceis + celular */}
         <Simplicidade />
 
-        {/* 14 — OFERTA COMERCIAL: R$20 pagamento único */}
+        {/* 11 — OFERTA COMERCIAL: R$20 pagamento único */}
         <Oferta onOpenCheckout={() => setIsCheckoutOpen(true)} />
 
-        {/* 15 — FAQ: Dúvidas principais */}
+        {/* 12 — FAQ: Dúvidas principais */}
         <Faq />
 
-        {/* 16 — CTA FINAL: Fotografia rural entardecer + CTA */}
+        {/* 13 — CTA FINAL: Fotografia rural entardecer + CTA */}
         <Fechamento onOpenCheckout={() => setIsCheckoutOpen(true)} />
       </main>
 

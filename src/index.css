@@ -6,3 +6,179 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
 }
+
+/* ==========================================================================
+   MINHA SAFRA - SISTEMA DE ANIMAÇÕES & TRANSIÇÕES INSPIRADO NO CAMPO
+   Prioridade: CLAREZA > FLUIDEZ > IDENTIDADE RURAL > ANIMAÇÃO
+   Duração padrão: 500ms - 700ms | Deslocamentos contidos: 15px - 30px
+   Easing: cubic-bezier(0.22, 1, 0.36, 1) [Natural Field Deceleration]
+   ========================================================================== */
+
+/* 1. Soft Fade Up para títulos, textos e pequenos elementos */
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. Alternating Mockup Reveal: entrada suave pela esquerda/direita */
+.mockup-reveal-left-init {
+  opacity: 0;
+  transform: translateX(-28px) scale(0.97);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.mockup-reveal-right-init {
+  opacity: 0;
+  transform: translateX(28px) scale(0.97);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.mockup-reveal-center-init {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.mockup-reveal-active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* 3. Phone Depth Reveal: scale suave de 0.96 para 1 */
+.phone-depth-reveal {
+  transform: scale(0.96);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.phone-depth-active {
+  transform: scale(1);
+}
+
+/* 4. Soft Spotlight atrás dos celulares */
+.phone-soft-spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 90%;
+  background: radial-gradient(
+    circle at center,
+    rgba(217, 173, 91, 0.12) 0%,
+    rgba(32, 56, 42, 0.15) 45%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.phone-soft-spotlight-forest {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125%;
+  height: 95%;
+  background: radial-gradient(
+    circle at center,
+    rgba(52, 211, 153, 0.16) 0%,
+    rgba(20, 37, 28, 0.3) 50%,
+    transparent 75%
+  );
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+/* 5. Soft Card Lift: apenas 3px a 5px com sombra suave */
+.soft-card-lift {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 300ms ease;
+}
+
+.soft-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(20, 37, 28, 0.18);
+}
+
+/* 6. Image Mask Reveal: revelação sutil para grandes fotos rurais */
+.image-mask-reveal {
+  clip-path: inset(0 0 0 0 round 1.25rem);
+  transition: clip-path 800ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 7. Field Parallax sutil em fotografias */
+.field-parallax-subtle {
+  transform: scale(1.03);
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* 8. WhatsApp Flow Animation */
+@keyframes flowPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(4px);
+  }
+}
+
+.whatsapp-flow-arrow {
+  animation: flowPulse 2.4s ease-in-out infinite;
+}
+
+/* 9. Forest Gradient Transitions */
+.bg-gradient-forest-creme {
+  background: linear-gradient(180deg, #F5F0E6 0%, #FAF8F5 100%);
+}
+
+.bg-gradient-creme-mata {
+  background: linear-gradient(180deg, #FAF8F5 0%, #20382A 100%);
+}
+
+.bg-gradient-mata-floresta {
+  background: linear-gradient(180deg, #20382A 0%, #14251C 100%);
+}
+
+/* Respeito estrito a prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-up-init,
+  .mockup-reveal-left-init,
+  .mockup-reveal-right-init,
+  .mockup-reveal-center-init,
+  .phone-depth-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
