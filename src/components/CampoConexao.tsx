@@ -8,7 +8,7 @@ export default function CampoConexao() {
 
   return (
     <section
-      className="relative pt-24 sm:pt-32 pb-28 sm:pb-36 overflow-hidden text-white bg-[#0e1511]"
+      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 overflow-hidden text-white bg-[#0e1511]"
       ref={ref}
     >
       {/* 
@@ -28,7 +28,7 @@ export default function CampoConexao() {
           }}
         />
 
-        {/* Overlay escuro em tom noturno / verde floresta (#0e1511) com leve difusão */}
+        {/* Overlay escuro em tom noturno / verde floresta (#0e1511) com excelente contraste */}
         <div className="absolute inset-0 bg-[#0e1511]/75 sm:bg-[#0e1511]/65 backdrop-blur-[0.2px]" />
 
         {/* 
@@ -68,14 +68,14 @@ export default function CampoConexao() {
         {/* Sobrancelha com Harvest Accent Line */}
         <div className={`flex flex-col items-center mb-3 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           <HarvestAccentLine color="#D9AD5B" className="mb-2" />
-          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D9AD5B] uppercase">
+          <p className="text-xs sm:text-sm font-bold tracking-wider text-[#D9AD5B] uppercase">
             DO CAMPO AO CELULAR
           </p>
         </div>
 
         {/* Título com Soft Fade Up */}
         <h2
-          className={`text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 [text-wrap:balance] drop-shadow-md fade-up-init ${
+          className={`text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 [text-wrap:balance] drop-shadow-md fade-up-init ${
             isVisible ? 'fade-up-active' : ''
           }`}
           style={{ transitionDelay: '100ms' }}
@@ -85,7 +85,7 @@ export default function CampoConexao() {
 
         {/* Descrição */}
         <p
-          className={`text-lg sm:text-xl text-stone-200 max-w-xl mx-auto mb-14 leading-relaxed font-normal drop-shadow-sm fade-up-init ${
+          className={`text-lg sm:text-xl text-stone-100 max-w-xl mx-auto mb-12 sm:mb-14 leading-relaxed font-semibold drop-shadow-sm fade-up-init ${
             isVisible ? 'fade-up-active' : ''
           }`}
           style={{ transitionDelay: '200ms' }}
@@ -100,16 +100,16 @@ export default function CampoConexao() {
           }`}
           style={{ transitionDelay: '300ms' }}
         >
-          <PhoneFrame variant="light" badge="Simplicidade Direta">
-            <div className="flex-1 flex flex-col justify-center items-center text-center p-4 space-y-4">
+          <PhoneFrame variant="dark" badge="Simplicidade Direta">
+            <div className="flex-1 flex flex-col justify-center items-center text-center p-4 space-y-4 text-white">
               <span className="text-5xl select-none" role="img" aria-label="Plantação">🌱</span>
-              <h3 className="text-xl font-extrabold text-stone-900 tracking-tight">
+              <h3 className="text-xl font-extrabold text-white tracking-tight">
                 Minha Safra 2026
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              <p className="text-sm text-stone-200 leading-relaxed font-medium">
                 Tudo pronto para anotar seus gastos, colheitas e vendas direto da roça.
               </p>
-              <div className="w-full py-3 bg-[#14251C] hover:bg-[#20382A] text-white rounded-xl text-xs font-bold shadow-xs transition-colors">
+              <div className="w-full py-3.5 bg-[#14251C] hover:bg-[#20382A] text-white border border-emerald-600/40 rounded-xl text-sm font-bold shadow-xs transition-colors">
                 Abrir Meu Controle
               </div>
             </div>

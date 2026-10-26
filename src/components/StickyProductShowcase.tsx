@@ -123,7 +123,7 @@ export default function StickyProductShowcase() {
     <section
       id="showcase"
       ref={containerRef}
-      className="relative bg-[#07110c] text-white overflow-visible pt-16 pb-20 sm:pb-28"
+      className="relative bg-[#07110c] text-white overflow-visible pt-12 sm:pt-16 pb-16 sm:pb-28"
     >
       {/* 
         =======================================================================
@@ -142,7 +142,7 @@ export default function StickyProductShowcase() {
         />
 
         {/* Overlay escuro em tom Verde Floresta (#07110c) para leitura perfeita dos textos e mockups */}
-        <div className="absolute inset-0 bg-[#07110c]/70 sm:bg-[#07110c]/60 backdrop-blur-[0.2px]" />
+        <div className="absolute inset-0 bg-[#07110c]/75 sm:bg-[#07110c]/60 backdrop-blur-[0.2px]" />
 
         {/* Ponte de transição superior: recebe suavemente a 4ª dobra (#070b09 / #07110c) sem corte seco */}
         <div
@@ -174,19 +174,19 @@ export default function StickyProductShowcase() {
       </div>
 
       {/* CABEÇALHO DA SEÇÃO (Antes do sticky começar) */}
-      <div className="max-w-6xl mx-auto px-6 pt-16 sm:pt-24 pb-16 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C86F42]" />
+      <div className="max-w-6xl mx-auto px-6 pt-10 sm:pt-24 pb-10 sm:pb-16 text-center relative z-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-[#C86F42]" />
           VEJA POR DENTRO
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] [text-wrap:balance] drop-shadow-md">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15] [text-wrap:balance] drop-shadow-md">
           Simples de usar.
           <br />
-          <span className="text-emerald-300 font-semibold">Fácil de entender.</span>
+          <span className="text-emerald-300 font-bold">Fácil de entender.</span>
         </h2>
 
-        <p className="text-base sm:text-lg text-stone-200 max-w-xl mx-auto mt-4 drop-shadow-sm font-medium">
+        <p className="text-base sm:text-lg text-stone-100 max-w-xl mx-auto mt-4 drop-shadow-sm font-semibold">
           Veja como as principais tarefas funcionam no Minha Safra, na lida do dia ou no trabalho noturno.
         </p>
       </div>
@@ -238,7 +238,7 @@ export default function StickyProductShowcase() {
               </div>
 
               {/* Legenda discreta com nota demonstrativa */}
-              <p className="text-[11px] text-stone-300 text-center mt-6">
+              <p className="text-xs text-stone-300 font-medium text-center mt-6">
                 Exemplo demonstrativo • Tela real do aplicativo
               </p>
             </div>
@@ -284,7 +284,7 @@ export default function StickyProductShowcase() {
                     {/* Número da etapa */}
                     <span
                       className="text-4xl font-black tracking-tight mb-2 block"
-                      style={{ color: isActive ? step.accentColor : '#6b7280' }}
+                      style={{ color: isActive ? step.accentColor : '#9ca3af' }}
                     >
                       {step.num}
                     </span>
@@ -292,11 +292,11 @@ export default function StickyProductShowcase() {
                     {/* Sobrancelha com Terracotta/Dourado Accent */}
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className="w-2 h-2 rounded-full"
+                        className="w-2.5 h-2.5 rounded-full"
                         style={{ backgroundColor: step.accentColor }}
                       />
                       <span
-                        className="text-xs font-bold uppercase tracking-wider"
+                        className="text-xs sm:text-sm font-extrabold uppercase tracking-wider"
                         style={{ color: step.accentColor }}
                       >
                         {step.eyebrow}
@@ -309,19 +309,19 @@ export default function StickyProductShowcase() {
                     </h3>
 
                     {/* Descrição */}
-                    <p className="text-base sm:text-lg text-stone-200 max-w-lg leading-relaxed font-normal">
+                    <p className="text-base sm:text-lg text-stone-100 max-w-lg leading-relaxed font-medium">
                       {step.description}
                     </p>
 
                     {/* Card de contexto da etapa com glassmorphism rústico */}
-                    <div className="mt-6 p-4 rounded-xl bg-[#0f1b14]/85 backdrop-blur-md border border-white/10 max-w-md shadow-lg">
+                    <div className="mt-6 p-4 rounded-xl bg-[#0f1b14]/90 backdrop-blur-md border border-white/15 max-w-md shadow-lg">
                       <div className="flex items-center gap-3">
                         <div
                           className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs shadow-inner"
                           style={{
                             backgroundColor: `${step.accentColor}25`,
                             color: step.accentColor,
-                            border: `1px solid ${step.accentColor}50`,
+                            border: `1px solid ${step.accentColor}60`,
                           }}
                         >
                           {step.num}
@@ -330,7 +330,7 @@ export default function StickyProductShowcase() {
                           <p className="text-xs font-bold text-white uppercase tracking-wider">
                             {step.indicator}
                           </p>
-                          <p className="text-xs text-stone-300">
+                          <p className="text-xs text-stone-200 font-medium">
                             Registro direto em poucos segundos
                           </p>
                         </div>
@@ -345,13 +345,13 @@ export default function StickyProductShowcase() {
       </div>
 
       {/* =========================================================================
-          MOBILE: SEQUÊNCIA VERTICAL LIMPA
+          MOBILE: SEQUÊNCIA VERTICAL LIMPA COM ESPAÇAMENTO COMPACTO E FLUIDO
           ========================================================================= */}
-      <div className="lg:hidden px-5 pb-24 space-y-20 relative z-10 max-w-md mx-auto">
+      <div className="lg:hidden px-5 pb-16 space-y-14 relative z-10 max-w-md mx-auto">
         {STEPS.map((step) => (
-          <div key={step.id} className="space-y-6">
+          <div key={step.id} className="space-y-4">
             {/* Texto do passo */}
-            <div className="text-center space-y-2">
+            <div className="text-center space-y-1.5">
               <span
                 className="text-2xl font-black tracking-tight"
                 style={{ color: step.accentColor }}
@@ -365,7 +365,7 @@ export default function StickyProductShowcase() {
                   style={{ backgroundColor: step.accentColor }}
                 />
                 <span
-                  className="text-xs font-bold uppercase tracking-wider"
+                  className="text-xs sm:text-sm font-extrabold uppercase tracking-wider"
                   style={{ color: step.accentColor }}
                 >
                   {step.eyebrow}
@@ -376,7 +376,7 @@ export default function StickyProductShowcase() {
                 {step.title} {step.subtitle}
               </h3>
 
-              <p className="text-sm text-stone-300 leading-relaxed px-2">
+              <p className="text-base text-stone-100 leading-relaxed font-medium px-2">
                 {step.description}
               </p>
             </div>
@@ -390,15 +390,15 @@ export default function StickyProductShowcase() {
           </div>
         ))}
 
-        <div className="text-center pt-4">
-          <p className="text-sm text-stone-300 font-medium italic">
+        <div className="text-center pt-2">
+          <p className="text-base text-stone-200 font-semibold italic">
             “É assim que o Minha Safra acompanha sua rotina.”
           </p>
         </div>
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a sexta dobra */}
-      <div className="relative w-full z-20 mt-12 sm:mt-16">
+      <div className="relative w-full z-20 mt-10 sm:mt-16 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0b100d" />
       </div>
     </section>

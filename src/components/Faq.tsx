@@ -38,7 +38,7 @@ export default function Faq() {
   return (
     <section
       id="duvidas"
-      className="relative pt-24 sm:pt-32 pb-28 sm:pb-36 text-white overflow-hidden bg-[#0c1a11]"
+      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 text-white overflow-hidden bg-[#0c1a11]"
       ref={ref}
     >
       {/* 
@@ -96,18 +96,18 @@ export default function Faq() {
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         {/* Title */}
-        <div className={`text-center mb-16 sm:mb-20 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
+        <div className={`text-center mb-12 sm:mb-20 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#D9AD5B" />
           </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D9AD5B]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#D9AD5B]" />
             DÚVIDAS FREQUENTES
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
             Perguntas comuns.
           </h2>
-          <p className="text-stone-300 text-sm sm:text-base mt-2">
+          <p className="text-stone-200 text-sm sm:text-base mt-2 font-medium">
             Respostas diretas para quem quer clareza antes de começar.
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function Faq() {
             return (
               <div
                 key={faq.q}
-                className="bg-[#0f2217]/90 backdrop-blur-md rounded-2xl border border-white/10 hover:border-emerald-500/40 overflow-hidden shadow-lg shadow-black/40 soft-card-lift transition-all duration-600 ease-out"
+                className="bg-[#0f2217]/95 backdrop-blur-md rounded-2xl border border-white/15 hover:border-emerald-500/50 overflow-hidden shadow-lg shadow-black/40 soft-card-lift transition-all duration-600 ease-out"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(18px)',
@@ -130,13 +130,13 @@ export default function Faq() {
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full p-6 sm:p-7 text-left flex items-center justify-between gap-4 cursor-pointer"
+                  className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="font-bold text-lg sm:text-xl text-white tracking-tight">
+                  <span className="font-extrabold text-base sm:text-xl text-white tracking-tight">
                     {faq.q}
                   </span>
                   <div
-                    className={`w-9 h-9 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-[#D9AD5B] transition-transform duration-300 ${
+                    className={`w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-[#D9AD5B] transition-transform duration-300 ${
                       isOpen ? 'rotate-180 bg-[#1e442f] text-emerald-300' : ''
                     }`}
                   >
@@ -145,7 +145,7 @@ export default function Faq() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-stone-200 text-base sm:text-lg leading-relaxed border-t border-white/10 pt-4">
+                  <div className="px-5 pb-5 sm:px-7 sm:pb-7 text-stone-100 text-base sm:text-lg leading-relaxed border-t border-white/10 pt-4 font-medium">
                     {faq.a}
                   </div>
                 )}

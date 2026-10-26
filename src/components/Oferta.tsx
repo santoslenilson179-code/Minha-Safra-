@@ -22,7 +22,7 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
   return (
     <section
       id="oferta"
-      className="relative pt-24 sm:pt-32 pb-28 sm:pb-36 bg-[#0B1E13] text-stone-100 overflow-hidden"
+      className="relative scroll-mt-24 pt-20 sm:pt-32 pb-24 sm:pb-36 bg-[#0B1E13] text-stone-100 overflow-hidden"
       ref={ref}
     >
       {/* 
@@ -82,7 +82,7 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Card grande e centralizado com soft-card-lift e spotlight */}
         <div
-          className={`bg-[#0f2417]/90 backdrop-blur-md rounded-3xl p-8 sm:p-14 border border-emerald-500/30 shadow-2xl text-center max-w-2xl mx-auto soft-card-lift mockup-reveal-center-init ${
+          className={`bg-[#0f2417]/95 backdrop-blur-md rounded-3xl p-7 sm:p-14 border border-emerald-500/40 shadow-2xl text-center max-w-2xl mx-auto soft-card-lift mockup-reveal-center-init ${
             isVisible ? 'mockup-reveal-active' : ''
           }`}
         >
@@ -90,36 +90,36 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#D9AD5B" />
           </div>
-          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D9AD5B] uppercase mb-3">
+          <p className="text-xs sm:text-sm font-extrabold tracking-widest text-[#D9AD5B] uppercase mb-3">
             ACESSO AO MINHA SAFRA
           </p>
 
           {/* Título */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 sm:mb-8 [text-wrap:balance] drop-shadow-md">
             Comece a organizar sua safra.
           </h2>
 
           {/* Preço grande em destaque */}
-          <div className="my-8">
+          <div className="my-6 sm:my-8">
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-3xl sm:text-4xl font-semibold text-[#D9AD5B]">R$</span>
-              <span className="text-6xl sm:text-7xl font-extrabold text-white tracking-tight tabular-nums drop-shadow-md">
+              <span className="text-3xl sm:text-4xl font-extrabold text-[#D9AD5B]">R$</span>
+              <span className="text-6xl sm:text-7xl font-black text-white tracking-tight tabular-nums drop-shadow-md">
                 20
               </span>
             </div>
-            <p className="text-base sm:text-lg text-emerald-200/90 font-medium mt-2">
+            <p className="text-base sm:text-lg text-emerald-200 font-semibold mt-2">
               Pagamento único
             </p>
           </div>
 
           {/* Lista curta com soft fade up */}
-          <div className="my-10 max-w-md mx-auto text-left space-y-3.5 border-y border-emerald-800/40 py-8">
+          <div className="my-8 sm:my-10 max-w-md mx-auto text-left space-y-3.5 border-y border-emerald-800/60 py-6 sm:py-8">
             {benefits.map((benefit) => (
               <div key={benefit} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-[#1b3525] text-[#34d399] flex items-center justify-center shrink-0 border border-emerald-700/50">
-                  <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                <div className="w-5 h-5 rounded-full bg-[#1b3525] text-[#34d399] flex items-center justify-center shrink-0 border border-emerald-600/60">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
-                <span className="text-base sm:text-lg text-stone-200 font-medium">
+                <span className="text-base sm:text-lg text-stone-100 font-semibold">
                   {benefit}
                 </span>
               </div>
@@ -130,12 +130,12 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
           <button
             onClick={onOpenCheckout}
             type="button"
-            className="w-full sm:w-auto px-10 py-5 bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
           >
             QUERO ORGANIZAR MINHA SAFRA
           </button>
 
-          <p className="text-xs text-stone-300 mt-6">
+          <p className="text-xs sm:text-sm text-stone-200 font-medium mt-6">
             Acesso vitalício. Sem mensalidades ou renovações.
           </p>
         </div>

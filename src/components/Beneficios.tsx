@@ -8,7 +8,7 @@ export default function Beneficios() {
   return (
     <section
       id="beneficios"
-      className="relative pt-24 sm:pt-32 pb-28 sm:pb-36 bg-[#0d1e15] text-white overflow-hidden"
+      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 bg-[#0d1e15] text-white overflow-hidden"
       ref={ref}
     >
       {/* 
@@ -67,14 +67,14 @@ export default function Beneficios() {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Title com Soft Fade Up */}
-        <div className={`text-center max-w-2xl mx-auto mb-14 sm:mb-18 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
+        <div className={`text-center max-w-2xl mx-auto mb-12 sm:mb-18 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#D9AD5B" />
           </div>
-          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#D9AD5B] uppercase mb-3">
+          <p className="text-xs sm:text-sm font-bold tracking-wider text-[#D9AD5B] uppercase mb-3">
             O QUE VOCÊ TEM NO APLICATIVO
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
             Feito para facilitar.
           </h2>
         </div>
@@ -97,10 +97,10 @@ export default function Beneficios() {
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-stone-600/70 bg-[#0d1d14] flex items-center justify-center text-3xl sm:text-4xl mb-5 shadow-inner transition-transform group-hover:scale-105">
                 <span role="img" aria-label="Saco de dinheiro">💰</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#D9AD5B] tracking-wide mb-2">
+              <h3 className="text-2xl sm:text-3xl font-black text-[#D9AD5B] tracking-wide mb-2">
                 + VENDI
               </h3>
-              <p className="text-base sm:text-lg text-stone-200 font-medium">
+              <p className="text-base sm:text-lg text-stone-100 font-semibold">
                 Entrou dinheiro
               </p>
             </div>
@@ -119,10 +119,10 @@ export default function Beneficios() {
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-stone-600/70 bg-[#0d1d14] flex items-center justify-center text-3xl sm:text-4xl mb-5 shadow-inner transition-transform group-hover:scale-105">
                 <span role="img" aria-label="Dinheiro com asas">💸</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#C86F42] tracking-wide mb-2">
+              <h3 className="text-2xl sm:text-3xl font-black text-[#C86F42] tracking-wide mb-2">
                 - GASTEI
               </h3>
-              <p className="text-base sm:text-lg text-stone-200 font-medium">
+              <p className="text-base sm:text-lg text-stone-100 font-semibold">
                 Saiu dinheiro
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function Beneficios() {
               <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
                 WhatsApp
               </h4>
-              <p className="text-sm font-semibold text-emerald-400">
+              <p className="text-sm sm:text-base font-bold text-emerald-300">
                 Compartilha resumo
               </p>
             </div>
@@ -167,7 +167,7 @@ export default function Beneficios() {
               <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
                 Calculadora
               </h4>
-              <p className="text-sm font-semibold text-emerald-400">
+              <p className="text-sm sm:text-base font-bold text-emerald-300">
                 Resultado apurado
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function Beneficios() {
               <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
                 Colheita
               </h4>
-              <p className="text-sm font-semibold text-[#D9AD5B]">
+              <p className="text-sm sm:text-base font-bold text-[#D9AD5B]">
                 Produção anotada
               </p>
             </div>

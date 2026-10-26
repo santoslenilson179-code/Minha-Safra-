@@ -27,12 +27,20 @@ export default function PhoneFrame({
         />
       )}
 
-      {/* Outer Phone Shell with Phone Depth Reveal transition */}
-      <div className="relative rounded-[48px] p-3 sm:p-3.5 bg-[#142319] shadow-2xl shadow-emerald-950/35 border-4 border-stone-800/80 ring-1 ring-black/40 transition-transform duration-500 ease-out group-hover:scale-[1.01]">
-        {/* Dynamic Island / Speaker Notch */}
-        <div className="absolute top-4 sm:top-4.5 left-1/2 -translate-x-1/2 z-30 h-4 w-28 bg-[#0a120c] rounded-full flex items-center justify-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-stone-900 border border-stone-800/80" />
-          <div className="w-1.5 h-1.5 rounded-full bg-[#1b3323]" />
+      {/* Outer Phone Shell in Forest Green matching attachment:
+          Borda/chassi externa com verde floresta (#122419), anel com verde musgo escuro (#1a3525)
+          e bisel arredondado característico dos smartphones modernos com tom verde militar / floresta profunda. */}
+      <div
+        className={`relative rounded-[48px] p-3 sm:p-3.5 shadow-2xl transition-transform duration-500 ease-out group-hover:scale-[1.01] ${
+          isDarkish
+            ? 'bg-[#122419] shadow-emerald-950/60 border-4 border-[#1c3826] ring-1 ring-emerald-500/20'
+            : 'bg-[#152a1d] shadow-emerald-950/40 border-4 border-[#1f3c2b] ring-1 ring-emerald-500/15'
+        }`}
+      >
+        {/* Dynamic Island / Speaker Notch com acabamento verde muito escuro e lente frontal */}
+        <div className="absolute top-4 sm:top-4.5 left-1/2 -translate-x-1/2 z-30 h-4 w-28 bg-[#09140e] rounded-full flex items-center justify-center gap-2 border border-[#162e20]/60 shadow-xs">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#050b07] border border-[#1a3826]" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#1b432a]" />
         </div>
 
         {/* Screen Display */}
@@ -41,12 +49,16 @@ export default function PhoneFrame({
             variant === 'whatsapp'
               ? 'bg-[#0B141A] text-stone-100'
               : variant === 'dark'
-              ? 'bg-[#0E1E14] text-stone-100'
+              ? 'bg-[#0a1610] text-stone-100'
               : 'bg-[#FAF8F5] text-stone-900'
           }`}
         >
-          {/* Top Status Bar Bar */}
-          <div className="pt-6 px-6 pb-2 flex items-center justify-between text-[11px] font-semibold tracking-tight opacity-75">
+          {/* Top Status Bar */}
+          <div
+            className={`pt-6 px-6 pb-2 flex items-center justify-between text-[11px] font-semibold tracking-tight ${
+              isDarkish ? 'text-stone-300 opacity-85' : 'text-stone-800 opacity-75'
+            }`}
+          >
             <span>09:41</span>
             <div className="flex items-center gap-1.5 text-[10px]">
               <span>5G</span>
@@ -61,14 +73,18 @@ export default function PhoneFrame({
 
           {/* Home Indicator Bar */}
           <div className="pb-2 pt-1 flex justify-center">
-            <div className="w-32 h-1 rounded-full bg-stone-400/40" />
+            <div
+              className={`w-32 h-1 rounded-full ${
+                isDarkish ? 'bg-emerald-900/40' : 'bg-stone-400/40'
+              }`}
+            />
           </div>
         </div>
       </div>
 
       {/* Floating Badge */}
       {badge && (
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-stone-200 text-xs font-bold text-stone-800 whitespace-nowrap z-20 transition-transform duration-300 group-hover:-translate-y-0.5">
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#102419]/95 text-emerald-200 backdrop-blur-md shadow-lg border border-emerald-500/40 text-xs font-bold whitespace-nowrap z-20 transition-transform duration-300 group-hover:-translate-y-0.5">
           {badge}
         </div>
       )}

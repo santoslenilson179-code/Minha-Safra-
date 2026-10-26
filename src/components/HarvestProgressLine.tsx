@@ -126,7 +126,7 @@ export default function HarvestProgressLine() {
     <section
       id="jornada"
       ref={containerRef}
-      className="relative bg-[#0b100d] text-white pt-16 pb-24 sm:pb-32 overflow-hidden"
+      className="relative bg-[#0b100d] text-white pt-12 sm:pt-16 pb-20 sm:pb-32 overflow-hidden"
     >
       {/* 
         =======================================================================
@@ -177,7 +177,7 @@ export default function HarvestProgressLine() {
       </div>
 
       {/* Conteúdo da Jornada */}
-      <div className="max-w-6xl mx-auto px-6 relative z-10 pt-8 sm:pt-12">
+      <div className="max-w-6xl mx-auto px-6 relative z-10 pt-6 sm:pt-12">
         {/* Curva SVG discreta conectando a linha vertical do showcase com a linha horizontal */}
         <div className="hidden lg:flex items-center justify-start pl-16 mb-8 text-[#C86F42]" aria-hidden="true">
           <svg width="180" height="48" viewBox="0 0 180 48" fill="none">
@@ -195,7 +195,7 @@ export default function HarvestProgressLine() {
         {/* Header da Jornada */}
         <div
           ref={headerRef}
-          className={`text-center max-w-3xl mx-auto mb-16 sm:mb-20 fade-up-init ${
+          className={`text-center max-w-3xl mx-auto mb-14 sm:mb-20 fade-up-init ${
             isHeaderVisible ? 'fade-up-active' : ''
           }`}
         >
@@ -203,20 +203,20 @@ export default function HarvestProgressLine() {
             <HarvestAccentLine color="#D9AD5B" />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
             <Calendar className="w-3.5 h-3.5 text-[#D9AD5B]" />
             DO PLANTIO AO FECHAMENTO
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15] [text-wrap:balance] drop-shadow-md">
             Sua safra.
             <br />
-            <span className="text-emerald-300 font-semibold">
+            <span className="text-emerald-300 font-bold">
               Passo a passo, até o resultado final.
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-stone-200 mt-4 leading-relaxed font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="text-base sm:text-lg text-stone-100 mt-4 leading-relaxed font-semibold max-w-2xl mx-auto drop-shadow-sm">
             O Minha Safra acompanha cada momento do seu ciclo agrícola. Veja como suas anotações
             constroem a visão completa do seu lucro.
           </p>
@@ -250,9 +250,9 @@ export default function HarvestProgressLine() {
               return (
                 <div
                   key={stage.id}
-                  className="bg-[#0f1712]/85 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/10 hover:border-emerald-500/40 shadow-xl shadow-black/40 flex flex-col justify-between soft-card-lift transition-all duration-700 ease-out relative group"
+                  className="bg-[#0f1712]/90 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 hover:border-emerald-500/50 shadow-xl shadow-black/40 flex flex-col justify-between soft-card-lift transition-all duration-700 ease-out relative group"
                   style={{
-                    borderColor: isPastCurrent ? `${stage.accentColor}60` : undefined,
+                    borderColor: isPastCurrent ? `${stage.accentColor}80` : undefined,
                   }}
                 >
                   {/* Topo do Card: Badge de estágio e ícone */}
@@ -270,24 +270,24 @@ export default function HarvestProgressLine() {
                         <Icon className="w-5 h-5" />
                       </div>
 
-                      <span className="text-[11px] font-bold tracking-widest uppercase text-stone-300/80 bg-white/10 px-2.5 py-1 rounded-full border border-white/15">
+                      <span className="text-xs font-bold tracking-wider uppercase text-stone-200 bg-white/10 px-2.5 py-1 rounded-full border border-white/20">
                         {stage.timeframe}
                       </span>
                     </div>
 
                     <div className="space-y-1 mb-3">
                       <p
-                        className="text-xs font-bold uppercase tracking-wider"
+                        className="text-xs sm:text-sm font-extrabold uppercase tracking-wider"
                         style={{ color: stage.accentColor }}
                       >
                         {stage.stage}
                       </p>
-                      <h3 className="text-xl font-bold text-white tracking-tight">
+                      <h3 className="text-xl font-extrabold text-white tracking-tight">
                         {stage.title}
                       </h3>
                     </div>
 
-                    <p className="text-sm text-stone-300 leading-relaxed font-normal mb-5">
+                    <p className="text-base text-stone-200 leading-relaxed font-medium mb-5">
                       {stage.actionSummary}
                     </p>
                   </div>
@@ -297,11 +297,11 @@ export default function HarvestProgressLine() {
                     {stage.kpis.map((kpi, kpiIdx) => (
                       <div
                         key={kpiIdx}
-                        className="flex items-center justify-between text-xs"
+                        className="flex items-center justify-between text-xs sm:text-sm font-semibold"
                       >
                         <span className="text-stone-300">{kpi.label}</span>
                         <span
-                          className="font-bold"
+                          className="font-extrabold"
                           style={{ color: stage.accentColor }}
                         >
                           {kpi.value}
@@ -326,22 +326,22 @@ export default function HarvestProgressLine() {
         </div>
 
         {/* Resumo de Confiança abaixo da linha */}
-        <div className="mt-16 sm:mt-20 text-center max-w-xl mx-auto">
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-md">
-            <p className="text-xs uppercase tracking-widest text-[#D9AD5B] font-bold mb-1">
+        <div className="mt-14 sm:mt-20 text-center max-w-xl mx-auto">
+          <div className="p-6 rounded-2xl bg-white/[0.07] border border-white/15 backdrop-blur-sm shadow-md">
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-[#D9AD5B] font-extrabold mb-1">
               TRANQUILIDADE NA PRÁTICA
             </p>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-sm">
               Tudo organizado. Sem complicação.
             </h3>
-            <p className="text-sm text-stone-300 mt-2">
+            <p className="text-base text-stone-200 mt-2 font-medium">
               Do registro rápido na roça ao fechamento claro do seu resultado.
             </p>
           </div>
 
           {/* PONTE PARA WHATSAPP: Conecta controle + comercialização */}
-          <div className="pt-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs sm:text-sm font-bold text-white">
+          <div className="pt-5 sm:pt-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs sm:text-sm font-bold text-white">
               <span>E quando chega a hora de oferecer sua produção?</span>
               <ArrowRight className="w-4 h-4 text-[#D9AD5B]" />
             </div>
@@ -350,7 +350,7 @@ export default function HarvestProgressLine() {
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a sétima dobra */}
-      <div className="relative w-full z-20 mt-14 sm:mt-20">
+      <div className="relative w-full z-20 mt-12 sm:mt-20 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0e1511" />
       </div>
     </section>

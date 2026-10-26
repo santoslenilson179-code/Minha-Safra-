@@ -9,7 +9,7 @@ export default function Dor() {
     <section
       id="dor"
       ref={ref}
-      className="relative pt-28 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#14251C]"
+      className="relative pt-20 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#14251C]"
     >
       {/* 
         =======================================================================
@@ -34,20 +34,20 @@ export default function Dor() {
           />
         </div>
 
-        {/* Overlay base Verde Floresta (#14251C) sutil para harmonizar a paleta terrosa */}
-        <div className="absolute inset-0 bg-[#14251C]/45" />
+        {/* Overlay base Verde Floresta (#14251C) com excelente contraste */}
+        <div className="absolute inset-0 bg-[#14251C]/60 sm:bg-[#14251C]/45" />
 
         {/* Forest Gradient Bridge no Topo: encontro perfeito com a Hero */}
         <div
           className="absolute inset-x-0 top-0 h-36 sm:h-48 pointer-events-none"
           style={{
             background:
-              'linear-gradient(180deg, #14251C 0%, rgba(20, 37, 28, 0.75) 50%, transparent 100%)',
+              'linear-gradient(180deg, #14251C 0%, rgba(20, 37, 28, 0.85) 50%, transparent 100%)',
           }}
         />
 
         {/* Gradiente lateral esquerdo para garantir legibilidade impecável dos textos */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#14251C]/92 via-[#14251C]/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#14251C]/95 via-[#14251C]/70 to-transparent sm:from-[#14251C]/92 sm:via-[#14251C]/65" />
 
         {/* TOPOGRAPHIC FADE-IN: Linhas topográficas discretas */}
         <div
@@ -95,7 +95,7 @@ export default function Dor() {
               style={{ opacity: isVisible ? 1 : 0 }}
             />
             <p
-              className="text-xs sm:text-sm font-semibold tracking-wider text-[#D9AD5B] uppercase transition-all duration-600 delay-150 ease-out"
+              className="text-xs sm:text-sm font-bold tracking-wider text-[#D9AD5B] uppercase transition-all duration-600 delay-150 ease-out"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
@@ -108,7 +108,7 @@ export default function Dor() {
 
           {/* Headline */}
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.2] [text-wrap:balance] drop-shadow-md transition-all duration-600 delay-250 ease-out"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.2] [text-wrap:balance] drop-shadow-md transition-all duration-600 delay-250 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
@@ -117,14 +117,14 @@ export default function Dor() {
           >
             O trabalho está no campo.
             <br />
-            <span className="text-stone-200 font-semibold">
+            <span className="text-stone-200 font-bold">
               As contas ficam espalhadas.
             </span>
           </h2>
 
           {/* Textos descritivos da dor */}
           <div
-            className="pt-2 space-y-4 text-lg sm:text-xl text-stone-100 leading-relaxed font-normal drop-shadow-sm transition-all duration-650 delay-350 ease-out"
+            className="pt-2 space-y-4 text-lg sm:text-xl text-stone-100 leading-relaxed font-medium drop-shadow-sm transition-all duration-650 delay-350 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -134,7 +134,7 @@ export default function Dor() {
             <p>
               Um gasto no caderno. Uma venda no WhatsApp. Outra informação guardada na cabeça.
             </p>
-            <p className="text-stone-300">
+            <p className="text-stone-200 font-medium">
               Quando chega a hora de juntar tudo, fica mais difícil enxergar como foi a safra.
             </p>
           </div>
@@ -144,8 +144,8 @@ export default function Dor() {
             className="pt-4 transition-opacity duration-700 delay-500"
             style={{ opacity: isVisible ? 1 : 0 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#06140B]/60 border border-emerald-900/60 text-xs text-stone-300">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C86F42]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#06140B]/75 border border-emerald-800/80 text-xs sm:text-sm font-semibold text-stone-200 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#C86F42]" />
               <span>Rotina real do pequeno e médio produtor</span>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function Dor() {
       </div>
 
       {/* Divisor orgânico suave que conecta perfeitamente a segunda dobra à terceira dobra */}
-      <div className="relative w-full z-20 mt-14 sm:mt-20">
+      <div className="relative w-full z-20 mt-14 sm:mt-20 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0d1b13" />
       </div>
     </section>

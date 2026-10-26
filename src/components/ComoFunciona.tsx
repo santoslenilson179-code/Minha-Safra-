@@ -29,7 +29,7 @@ export default function ComoFunciona() {
   return (
     <section
       id="como-funciona"
-      className="relative pt-24 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#070b09]"
+      className="relative pt-20 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#070b09]"
     >
       {/* 
         =======================================================================
@@ -47,8 +47,8 @@ export default function ComoFunciona() {
           }}
         />
 
-        {/* Overlay escuro em tom noturno profundo (#070b09) */}
-        <div className="absolute inset-0 bg-[#070b09]/55 sm:bg-[#070b09]/45" />
+        {/* Overlay escuro em tom noturno profundo (#070b09) com excelente contraste */}
+        <div className="absolute inset-0 bg-[#070b09]/70 sm:bg-[#070b09]/45" />
 
         {/* Ponte de transição superior: recebe suavemente a 3ª dobra (#0d1b13 / #070b09) sem corte seco */}
         <div
@@ -76,7 +76,7 @@ export default function ComoFunciona() {
           className="absolute inset-x-0 bottom-0 h-44 sm:h-60 pointer-events-none"
           style={{
             background:
-              'linear-gradient(180deg, transparent 0%, rgba(7, 11, 9, 0.6) 35%, rgba(9, 13, 11, 0.9) 75%, #090d0b 100%)',
+              'linear-gradient(180deg, transparent 0%, rgba(7, 11, 9, 0.6) 35%, rgba(9, 13, 11, 0.9) 75%, #07110c 100%)',
           }}
         />
       </div>
@@ -84,17 +84,17 @@ export default function ComoFunciona() {
       <div className="max-w-6xl mx-auto px-6 relative z-10" ref={ref}>
         {/* Title com Soft Fade Up */}
         <div
-          className={`text-center max-w-2xl mx-auto mb-16 sm:mb-20 fade-up-init ${
+          className={`text-center max-w-2xl mx-auto mb-14 sm:mb-20 fade-up-init ${
             isVisible ? 'fade-up-active' : ''
           }`}
         >
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#C86F42" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white [text-wrap:balance] drop-shadow-md">
             Três passos. Só isso.
           </h2>
-          <p className="text-base sm:text-lg text-stone-200 mt-3 drop-shadow-sm font-medium">
+          <p className="text-base sm:text-lg text-stone-100 mt-3 drop-shadow-sm font-semibold">
             Simplicidade projetada para a rotina no campo, seja de dia ou no trabalho noturno.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function ComoFunciona() {
             return (
               <div
                 key={step.number}
-                className="bg-[#0e1611]/85 backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-emerald-900/40 hover:border-emerald-500/50 shadow-lg shadow-black/50 flex flex-col justify-between min-h-[220px] soft-card-lift transition-all duration-700 ease-out"
+                className="bg-[#0e1611]/90 backdrop-blur-md rounded-2xl p-7 sm:p-10 border border-emerald-900/50 hover:border-emerald-500/60 shadow-lg shadow-black/50 flex flex-col justify-between min-h-[220px] soft-card-lift transition-all duration-700 ease-out"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
@@ -116,38 +116,38 @@ export default function ComoFunciona() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span
-                      className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full border"
+                      className="text-xs sm:text-sm font-extrabold tracking-wider uppercase px-3 py-1 rounded-full border"
                       style={{
                         color: step.accent,
-                        borderColor: `${step.accent}50`,
-                        backgroundColor: `${step.accent}15`,
+                        borderColor: `${step.accent}60`,
+                        backgroundColor: `${step.accent}20`,
                       }}
                     >
                       PASSO {step.number}
                     </span>
                     <span
-                      className="text-2xl sm:text-3xl font-black opacity-30"
+                      className="text-2xl sm:text-3xl font-black opacity-40"
                       style={{ color: step.accent }}
                     >
                       {step.number}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
+                  <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">
                     {step.action}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-normal">
+                  <p className="text-base text-stone-200 leading-relaxed font-medium">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-white/10 flex items-center gap-2">
+                <div className="pt-5 mt-4 border-t border-white/10 flex items-center gap-2">
                   <div
-                    className="w-2 h-2 rounded-full shadow-xs"
+                    className="w-2.5 h-2.5 rounded-full shadow-xs"
                     style={{ backgroundColor: step.accent }}
                   />
-                  <span className="text-xs font-semibold text-stone-300">
+                  <span className="text-xs sm:text-sm font-bold text-stone-200">
                     Direto pelo celular
                   </span>
                 </div>
@@ -158,8 +158,8 @@ export default function ComoFunciona() {
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a quinta dobra */}
-      <div className="relative w-full z-20 mt-12 sm:mt-16">
-        <OrganicTerrainDivider height={44} fill="#090d0b" />
+      <div className="relative w-full z-20 mt-12 sm:mt-16 -mb-[1px]">
+        <OrganicTerrainDivider height={44} fill="#07110c" />
       </div>
     </section>
   );

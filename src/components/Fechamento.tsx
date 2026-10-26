@@ -10,7 +10,7 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
 
   return (
-    <section className="relative py-28 sm:py-36 overflow-hidden flex items-center justify-center text-white bg-[#06140B]" ref={ref}>
+    <section className="relative py-24 sm:py-36 overflow-hidden flex items-center justify-center text-white bg-[#06140B]" ref={ref}>
       {/* Background photograph com Field Parallax sutil e transição superior harmônica */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
@@ -47,40 +47,40 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
         </div>
 
         {/* Título com Soft Fade Up */}
-        <h2 className={`text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 [text-wrap:balance] fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
+        <h2 className={`text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 [text-wrap:balance] fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           Sua safra já dá trabalho demais.
         </h2>
 
         {/* Complemento */}
-        <p className={`text-xl sm:text-2xl lg:text-3xl font-medium text-emerald-200 mb-6 fade-up-init ${isVisible ? 'fade-up-active' : ''}`} style={{ transitionDelay: '100ms' }}>
+        <p className={`text-xl sm:text-2xl lg:text-3xl font-bold text-emerald-200 mb-6 fade-up-init ${isVisible ? 'fade-up-active' : ''}`} style={{ transitionDelay: '100ms' }}>
           Organizar seus números não precisa dar.
         </p>
 
         {/* Texto */}
-        <p className={`text-base sm:text-lg text-stone-300 max-w-xl mx-auto mb-10 leading-relaxed fade-up-init ${isVisible ? 'fade-up-active' : ''}`} style={{ transitionDelay: '200ms' }}>
+        <p className={`text-base sm:text-lg text-stone-100 max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed font-semibold fade-up-init ${isVisible ? 'fade-up-active' : ''}`} style={{ transitionDelay: '200ms' }}>
           Gastos, produção e vendas organizados de forma simples.
         </p>
 
         {/* Preço e CTA */}
         <div className={`flex flex-col items-center gap-3 fade-up-init ${isVisible ? 'fade-up-active' : ''}`} style={{ transitionDelay: '300ms' }}>
           <div className="flex items-baseline gap-2 mb-1">
-            <span className="text-2xl text-[#D9AD5B] font-semibold">R$</span>
-            <span className="text-5xl sm:text-6xl font-extrabold text-white tabular-nums tracking-tight">
+            <span className="text-2xl text-[#D9AD5B] font-extrabold">R$</span>
+            <span className="text-5xl sm:text-6xl font-black text-white tabular-nums tracking-tight">
               20
             </span>
-            <span className="text-sm sm:text-base text-emerald-200/90 font-medium">
+            <span className="text-sm sm:text-base text-emerald-200 font-semibold">
               / Pagamento único
             </span>
           </div>
 
-          <p className="text-xs text-stone-400 mb-4">
+          <p className="text-xs sm:text-sm text-stone-300 font-medium mb-4">
             Acesso imediato e vitalício.
           </p>
 
           <button
             onClick={onOpenCheckout}
             type="button"
-            className="w-full sm:w-auto px-10 py-5 bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
           >
             QUERO ORGANIZAR MINHA SAFRA AGORA
           </button>

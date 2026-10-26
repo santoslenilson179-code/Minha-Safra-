@@ -1,4 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { ArrowDown } from 'lucide-react';
 import farmerSunsetPhoneImg from '../assets/images/farmer_sunset_phone_field_1790950925226.jpg';
 import { OrganicGrainTexture, TopographicLines, HarvestAccentLine } from './RuralAccents';
 
@@ -28,10 +29,18 @@ export default function Simplicidade() {
     },
   ];
 
+  const handleScrollToOferta = () => {
+    const el = document.getElementById('oferta');
+    if (el) {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+    }
+  };
+
   return (
     <section
       id="simplicidade"
-      className="relative pt-24 sm:pt-32 pb-28 sm:pb-36 text-white overflow-hidden bg-[#18261e]"
+      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 text-white overflow-hidden bg-[#18261e]"
       ref={ref}
     >
       {/* 
@@ -93,39 +102,39 @@ export default function Simplicidade() {
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#C86F42" />
           </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D9AD5B]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#D9AD5B]" />
             PRATICIDADE NA ROÇA
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 [text-wrap:balance] drop-shadow-md">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 [text-wrap:balance] drop-shadow-md">
             Você não precisa entender de sistemas.
           </h2>
-          <p className="text-xl sm:text-2xl text-emerald-300 font-semibold mb-16 drop-shadow-sm">
+          <p className="text-xl sm:text-2xl text-emerald-300 font-bold mb-12 sm:mb-16 drop-shadow-sm">
             O Minha Safra foi feito para ser simples.
           </p>
         </div>
 
         {/* 4 Características com Soft Card Lift em glassmorphism rústico escuro */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 sm:mb-16">
           {features.map((item, idx) => {
             const delayMs = idx * 100;
             return (
               <div
                 key={item.label}
-                className="bg-[#0f1f16]/85 backdrop-blur-md rounded-2xl p-7 border border-white/10 hover:border-emerald-500/50 shadow-lg shadow-black/40 flex flex-col items-center text-center soft-card-lift transition-all duration-700 ease-out"
+                className="bg-[#0f1f16]/90 backdrop-blur-md rounded-2xl p-7 border border-white/15 hover:border-emerald-500/50 shadow-lg shadow-black/40 flex flex-col items-center text-center soft-card-lift transition-all duration-700 ease-out"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                   transitionDelay: `${delayMs}ms`,
                 }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-2xl font-bold text-[#D9AD5B] mb-4 select-none shadow-inner">
+                <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-2xl font-black text-[#D9AD5B] mb-4 select-none shadow-inner">
                   {item.symbol}
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-wider mb-2">
+                <h3 className="text-base sm:text-lg font-extrabold text-white tracking-wider mb-2">
                   {item.label}
                 </h3>
-                <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-normal">
+                <p className="text-sm text-stone-200 leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>
@@ -138,10 +147,34 @@ export default function Simplicidade() {
           className={`fade-up-init ${isVisible ? 'fade-up-active' : ''}`}
           style={{ transitionDelay: '450ms' }}
         >
-          <div className="inline-block px-6 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 shadow-md">
-            <p className="text-xl sm:text-2xl font-bold text-white tracking-tight drop-shadow-sm">
+          <div className="inline-block px-6 py-3 rounded-2xl bg-black/50 backdrop-blur-md border border-white/15 shadow-md">
+            <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-sm">
               Abra. Registre. Continue seu trabalho.
             </p>
+          </div>
+        </div>
+
+        {/* 
+          =======================================================================
+          NOVO CTA INTERMEDIÁRIO: CAMINHO DIRETO E NATURAL ATÉ A OFERTA
+          =======================================================================
+        */}
+        <div
+          className={`mt-10 sm:mt-12 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}
+          style={{ transitionDelay: '550ms' }}
+        >
+          <div className="flex flex-col items-center justify-center max-w-md mx-auto">
+            <p className="text-sm sm:text-base font-semibold text-emerald-200/90 mb-3 drop-shadow-xs">
+              Já entendeu como funciona?
+            </p>
+            <button
+              onClick={handleScrollToOferta}
+              type="button"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 min-h-[52px] bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <span>VER OFERTA</span>
+              <ArrowDown className="w-5 h-5 text-white/90" />
+            </button>
           </div>
         </div>
       </div>
