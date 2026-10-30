@@ -104,7 +104,7 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
             <div className="flex items-baseline justify-center gap-2">
               <span className="text-3xl sm:text-4xl font-extrabold text-[#D9AD5B]">R$</span>
               <span className="text-6xl sm:text-7xl font-black text-white tracking-tight tabular-nums drop-shadow-md">
-                37,90
+                97,90
               </span>
             </div>
             <p className="text-base sm:text-lg text-emerald-200 font-semibold mt-2">

@@ -16,13 +16,26 @@ import Fechamento from './components/Fechamento';
 import Footer from './components/Footer';
 import CheckoutModal from './components/CheckoutModal';
 
+const CAKTO_CHECKOUT_URL = 'https://pay.cakto.com.br/6azps8w_1263141';
+
 export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+
+  const handleOpenCheckout = () => {
+    try {
+      const newTab = window.open(CAKTO_CHECKOUT_URL, '_blank', 'noopener,noreferrer');
+      if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+        window.location.href = CAKTO_CHECKOUT_URL;
+      }
+    } catch {
+      window.location.href = CAKTO_CHECKOUT_URL;
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 font-sans">
       {/* Top Header */}
-      <Header onOpenCheckout={() => setIsCheckoutOpen(true)} />
+      <Header onOpenCheckout={handleOpenCheckout} />
 
       <main className="flex-1">
         {/* 01 — HERO: Dor + solução + fotografia do trator e plantação */}
@@ -62,14 +75,14 @@ export default function App() {
         {/* 10 — SIMPLICIDADE: Letras grandes + botões fáceis + celular */}
         <Simplicidade />
 
-        {/* 11 — OFERTA COMERCIAL: R$20 pagamento único */}
-        <Oferta onOpenCheckout={() => setIsCheckoutOpen(true)} />
+        {/* 11 — OFERTA COMERCIAL: R$ 97,90 pagamento único */}
+        <Oferta onOpenCheckout={handleOpenCheckout} />
 
         {/* 12 — FAQ: Dúvidas principais */}
         <Faq />
 
         {/* 13 — CTA FINAL: Fotografia rural entardecer + CTA */}
-        <Fechamento onOpenCheckout={() => setIsCheckoutOpen(true)} />
+        <Fechamento onOpenCheckout={handleOpenCheckout} />
       </main>
 
       {/* FOOTER */}

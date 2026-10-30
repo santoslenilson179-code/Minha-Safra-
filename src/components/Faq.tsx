@@ -27,7 +27,7 @@ export default function Faq() {
     },
     {
       q: 'Quanto custa?',
-      a: 'R$ 37,90 em pagamento único.',
+      a: 'R$ 97,90 em pagamento único.',
     },
   ];
 
