@@ -40,7 +40,7 @@ export default function Simplicidade() {
   return (
     <section
       id="simplicidade"
-      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 text-white overflow-hidden bg-[#18261e]"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-24 text-white overflow-hidden bg-[#18261e]"
       ref={ref}
     >
       {/* 
@@ -109,13 +109,13 @@ export default function Simplicidade() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 [text-wrap:balance] drop-shadow-md">
             Você não precisa entender de sistemas.
           </h2>
-          <p className="text-xl sm:text-2xl text-emerald-300 font-bold mb-12 sm:mb-16 drop-shadow-sm">
+          <p className="text-xl sm:text-2xl text-emerald-300 font-bold mb-8 sm:mb-10 drop-shadow-sm">
             O Minha Safra foi feito para ser simples.
           </p>
         </div>
 
         {/* 4 Características com Soft Card Lift em glassmorphism rústico escuro */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8 sm:mb-10">
           {features.map((item, idx) => {
             const delayMs = idx * 100;
             return (

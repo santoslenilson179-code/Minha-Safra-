@@ -10,7 +10,7 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
 
   return (
-    <section className="relative py-24 sm:py-36 overflow-hidden flex items-center justify-center text-white bg-[#06140B]" ref={ref}>
+    <section className="relative py-16 sm:py-24 overflow-hidden flex items-center justify-center text-white bg-[#06140B]" ref={ref}>
       {/* Background photograph com Field Parallax sutil e transição superior harmônica */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
@@ -66,7 +66,7 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
           <div className="flex items-baseline gap-2 mb-1">
             <span className="text-2xl text-[#D9AD5B] font-extrabold">R$</span>
             <span className="text-5xl sm:text-6xl font-black text-white tabular-nums tracking-tight">
-              20
+              37,90
             </span>
             <span className="text-sm sm:text-base text-emerald-200 font-semibold">
               / Pagamento único

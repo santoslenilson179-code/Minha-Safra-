@@ -8,7 +8,7 @@ export default function CampoConexao() {
 
   return (
     <section
-      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 overflow-hidden text-white bg-[#0e1511]"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-24 overflow-hidden text-white bg-[#0e1511]"
       ref={ref}
     >
       {/* 
@@ -85,7 +85,7 @@ export default function CampoConexao() {
 
         {/* Descrição */}
         <p
-          className={`text-lg sm:text-xl text-stone-100 max-w-xl mx-auto mb-12 sm:mb-14 leading-relaxed font-semibold drop-shadow-sm fade-up-init ${
+          className={`text-lg sm:text-xl text-stone-100 max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed font-semibold drop-shadow-sm fade-up-init ${
             isVisible ? 'fade-up-active' : ''
           }`}
           style={{ transitionDelay: '200ms' }}

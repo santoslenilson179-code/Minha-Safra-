@@ -123,7 +123,7 @@ export default function StickyProductShowcase() {
     <section
       id="showcase"
       ref={containerRef}
-      className="relative bg-[#07110c] text-white overflow-visible pt-12 sm:pt-16 pb-16 sm:pb-28"
+      className="relative bg-[#07110c] text-white overflow-visible pt-8 sm:pt-12 pb-10 sm:pb-16"
     >
       {/* 
         =======================================================================
@@ -174,7 +174,7 @@ export default function StickyProductShowcase() {
       </div>
 
       {/* CABEÇALHO DA SEÇÃO (Antes do sticky começar) */}
-      <div className="max-w-6xl mx-auto px-6 pt-10 sm:pt-24 pb-10 sm:pb-16 text-center relative z-10">
+      <div className="max-w-6xl mx-auto px-6 pt-6 sm:pt-14 pb-8 sm:pb-12 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
           <span className="w-2 h-2 rounded-full bg-[#C86F42]" />
           VEJA POR DENTRO
@@ -194,7 +194,7 @@ export default function StickyProductShowcase() {
       {/* =========================================================================
           DESKTOP: STICKY SHOWCASE (CELULAR FIXO À ESQUERDA, SCROLL À DIREITA)
           ========================================================================= */}
-      <div className="hidden lg:block max-w-[1240px] mx-auto px-6 relative z-10 pb-28">
+      <div className="hidden lg:block max-w-[1240px] mx-auto px-6 relative z-10 pb-12">
         <div className="grid grid-cols-12 gap-8 xl:gap-12 items-start relative">
           
           {/* LADO ESQUERDO: CELULAR STICKY (45-50%) */}
@@ -255,8 +255,8 @@ export default function StickyProductShowcase() {
               />
             </div>
 
-            {/* ITENS ROLÁVEIS (4 etapas bem espaçadas) */}
-            <div className="space-y-48 py-16">
+            {/* ITENS ROLÁVEIS (4 etapas com espaçamento dinâmico e natural) */}
+            <div className="space-y-28 py-8">
               {STEPS.map((step, idx) => {
                 const isActive = idx === activeStepIndex;
                 return (
@@ -347,7 +347,7 @@ export default function StickyProductShowcase() {
       {/* =========================================================================
           MOBILE: SEQUÊNCIA VERTICAL LIMPA COM ESPAÇAMENTO COMPACTO E FLUIDO
           ========================================================================= */}
-      <div className="lg:hidden px-5 pb-16 space-y-14 relative z-10 max-w-md mx-auto">
+      <div className="lg:hidden px-5 pb-8 space-y-10 relative z-10 max-w-md mx-auto">
         {STEPS.map((step) => (
           <div key={step.id} className="space-y-4">
             {/* Texto do passo */}
@@ -398,7 +398,7 @@ export default function StickyProductShowcase() {
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a sexta dobra */}
-      <div className="relative w-full z-20 mt-10 sm:mt-16 -mb-[1px]">
+      <div className="relative w-full z-20 mt-6 sm:mt-10 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0b100d" />
       </div>
     </section>

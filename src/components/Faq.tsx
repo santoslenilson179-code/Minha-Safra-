@@ -27,7 +27,7 @@ export default function Faq() {
     },
     {
       q: 'Quanto custa?',
-      a: 'R$20 em pagamento único.',
+      a: 'R$ 37,90 em pagamento único.',
     },
   ];
 
@@ -38,7 +38,7 @@ export default function Faq() {
   return (
     <section
       id="duvidas"
-      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 text-white overflow-hidden bg-[#0c1a11]"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-24 text-white overflow-hidden bg-[#0c1a11]"
       ref={ref}
     >
       {/* 
@@ -96,7 +96,7 @@ export default function Faq() {
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         {/* Title */}
-        <div className={`text-center mb-12 sm:mb-20 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
+        <div className={`text-center mb-8 sm:mb-12 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#D9AD5B" />
           </div>

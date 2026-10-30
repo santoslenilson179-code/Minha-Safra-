@@ -1,4 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { ArrowDown } from 'lucide-react';
 import sprayerNightStarsImg from '../assets/images/sprayer_night_stars_lights_1790945533939.jpg';
 import { OrganicGrainTexture, TopographicLines, HarvestAccentLine, OrganicTerrainDivider } from './RuralAccents';
 
@@ -29,7 +30,7 @@ export default function ComoFunciona() {
   return (
     <section
       id="como-funciona"
-      className="relative pt-20 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#070b09]"
+      className="relative pt-16 sm:pt-24 pb-8 sm:pb-14 text-white overflow-hidden bg-[#070b09]"
     >
       {/* 
         =======================================================================
@@ -155,10 +156,28 @@ export default function ComoFunciona() {
             );
           })}
         </div>
+
+        {/* CTA Intermediário da 4ª Dobra: leva diretamente à oferta existente */}
+        <div className="mt-10 sm:mt-12 text-center">
+          <button
+            onClick={() => {
+              const el = document.getElementById('oferta');
+              if (el) {
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+              }
+            }}
+            type="button"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 min-h-[52px] bg-[#C86F42] hover:bg-[#b56035] text-white rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-stone-950/40 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span>VER OFERTA</span>
+            <ArrowDown className="w-5 h-5 text-white/90" />
+          </button>
+        </div>
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a quinta dobra */}
-      <div className="relative w-full z-20 mt-12 sm:mt-16 -mb-[1px]">
+      <div className="relative w-full z-20 mt-8 sm:mt-10 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#07110c" />
       </div>
     </section>

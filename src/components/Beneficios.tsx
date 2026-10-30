@@ -8,7 +8,7 @@ export default function Beneficios() {
   return (
     <section
       id="beneficios"
-      className="relative pt-20 sm:pt-32 pb-24 sm:pb-36 bg-[#0d1e15] text-white overflow-hidden"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#0d1e15] text-white overflow-hidden"
       ref={ref}
     >
       {/* 
@@ -67,7 +67,7 @@ export default function Beneficios() {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Title com Soft Fade Up */}
-        <div className={`text-center max-w-2xl mx-auto mb-12 sm:mb-18 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
+        <div className={`text-center max-w-2xl mx-auto mb-8 sm:mb-12 fade-up-init ${isVisible ? 'fade-up-active' : ''}`}>
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#D9AD5B" />
           </div>

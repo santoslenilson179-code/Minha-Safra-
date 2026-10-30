@@ -9,7 +9,7 @@ export default function Dor() {
     <section
       id="dor"
       ref={ref}
-      className="relative pt-20 sm:pt-36 pb-20 sm:pb-28 text-white overflow-hidden bg-[#14251C]"
+      className="relative pt-16 sm:pt-28 pb-10 sm:pb-16 text-white overflow-hidden bg-[#14251C]"
     >
       {/* 
         =======================================================================
@@ -153,7 +153,7 @@ export default function Dor() {
       </div>
 
       {/* Divisor orgânico suave que conecta perfeitamente a segunda dobra à terceira dobra */}
-      <div className="relative w-full z-20 mt-14 sm:mt-20 -mb-[1px]">
+      <div className="relative w-full z-20 mt-8 sm:mt-12 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0d1b13" />
       </div>
     </section>

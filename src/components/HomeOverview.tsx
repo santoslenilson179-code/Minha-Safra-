@@ -9,7 +9,7 @@ export default function HomeOverview() {
   const { ref: phoneRef, isVisible: isPhoneVisible } = useScrollReveal({ threshold: 0.15 });
 
   return (
-    <section className="relative py-20 sm:py-36 text-white overflow-hidden bg-[#0d1b13]">
+    <section className="relative pt-14 sm:pt-20 pb-16 sm:pb-24 text-white overflow-hidden bg-[#0d1b13]">
       {/* 
         =======================================================================
         BACKGROUND: FOTO DO ÍCONE MINHA SAFRA + PONTES DE GRADIENTES HARMÔNICAS

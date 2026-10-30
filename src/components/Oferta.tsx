@@ -22,7 +22,7 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
   return (
     <section
       id="oferta"
-      className="relative scroll-mt-24 pt-20 sm:pt-32 pb-24 sm:pb-36 bg-[#0B1E13] text-stone-100 overflow-hidden"
+      className="relative scroll-mt-24 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#0B1E13] text-stone-100 overflow-hidden"
       ref={ref}
     >
       {/* 
@@ -104,7 +104,7 @@ export default function Oferta({ onOpenCheckout }: OfertaProps) {
             <div className="flex items-baseline justify-center gap-2">
               <span className="text-3xl sm:text-4xl font-extrabold text-[#D9AD5B]">R$</span>
               <span className="text-6xl sm:text-7xl font-black text-white tracking-tight tabular-nums drop-shadow-md">
-                20
+                37,90
               </span>
             </div>
             <p className="text-base sm:text-lg text-emerald-200 font-semibold mt-2">

@@ -8,7 +8,7 @@ export default function MockupWhatsAppDual() {
   const { ref: phonesRef, isVisible: isPhonesVisible } = useScrollReveal({ threshold: 0.15 });
 
   return (
-    <section className="pt-20 sm:pt-32 pb-24 sm:pb-36 bg-[#0e1511] text-white overflow-hidden relative">
+    <section className="pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#0e1511] text-white overflow-hidden relative">
       {/* 
         =======================================================================
         BACKGROUND: HARMONIOUS ATMOSPHERE & SEAMLESS 7ª → 8ª SECTION BLEND
@@ -47,7 +47,7 @@ export default function MockupWhatsAppDual() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header com Soft Fade Up */}
-        <div ref={headerRef} className={`text-center max-w-3xl mx-auto mb-14 sm:mb-20 fade-up-init ${isHeaderVisible ? 'fade-up-active' : ''}`}>
+        <div ref={headerRef} className={`text-center max-w-3xl mx-auto mb-10 sm:mb-14 fade-up-init ${isHeaderVisible ? 'fade-up-active' : ''}`}>
           <div className="flex justify-center mb-3">
             <HarvestAccentLine color="#C86F42" />
           </div>
@@ -237,7 +237,7 @@ export default function MockupWhatsAppDual() {
         </div>
 
         {/* 3 Diferenciais objetivos do WhatsApp abaixo */}
-        <div className="mt-12 sm:mt-18 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
           <div className="bg-[#14251C]/90 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-emerald-900/60 shadow-md text-center">
             <h4 className="text-base font-extrabold text-white mb-1.5">Sem Erro de Conta</h4>
             <p className="text-sm text-stone-200 leading-relaxed font-medium">

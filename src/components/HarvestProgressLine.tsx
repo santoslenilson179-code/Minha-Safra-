@@ -126,7 +126,7 @@ export default function HarvestProgressLine() {
     <section
       id="jornada"
       ref={containerRef}
-      className="relative bg-[#0b100d] text-white pt-12 sm:pt-16 pb-20 sm:pb-32 overflow-hidden"
+      className="relative bg-[#0b100d] text-white pt-8 sm:pt-14 pb-12 sm:pb-20 overflow-hidden"
     >
       {/* 
         =======================================================================
@@ -177,9 +177,9 @@ export default function HarvestProgressLine() {
       </div>
 
       {/* Conteúdo da Jornada */}
-      <div className="max-w-6xl mx-auto px-6 relative z-10 pt-6 sm:pt-12">
+      <div className="max-w-6xl mx-auto px-6 relative z-10 pt-4 sm:pt-8">
         {/* Curva SVG discreta conectando a linha vertical do showcase com a linha horizontal */}
-        <div className="hidden lg:flex items-center justify-start pl-16 mb-8 text-[#C86F42]" aria-hidden="true">
+        <div className="hidden lg:flex items-center justify-start pl-16 mb-6 text-[#C86F42]" aria-hidden="true">
           <svg width="180" height="48" viewBox="0 0 180 48" fill="none">
             <path
               d="M 12 0 V 24 Q 12 36 28 36 H 170"
@@ -195,7 +195,7 @@ export default function HarvestProgressLine() {
         {/* Header da Jornada */}
         <div
           ref={headerRef}
-          className={`text-center max-w-3xl mx-auto mb-14 sm:mb-20 fade-up-init ${
+          className={`text-center max-w-3xl mx-auto mb-10 sm:mb-14 fade-up-init ${
             isHeaderVisible ? 'fade-up-active' : ''
           }`}
         >
@@ -326,7 +326,7 @@ export default function HarvestProgressLine() {
         </div>
 
         {/* Resumo de Confiança abaixo da linha */}
-        <div className="mt-14 sm:mt-20 text-center max-w-xl mx-auto">
+        <div className="mt-10 sm:mt-14 text-center max-w-xl mx-auto">
           <div className="p-6 rounded-2xl bg-white/[0.07] border border-white/15 backdrop-blur-sm shadow-md">
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[#D9AD5B] font-extrabold mb-1">
               TRANQUILIDADE NA PRÁTICA
@@ -340,7 +340,7 @@ export default function HarvestProgressLine() {
           </div>
 
           {/* PONTE PARA WHATSAPP: Conecta controle + comercialização */}
-          <div className="pt-5 sm:pt-6">
+          <div className="pt-4 sm:pt-5">
             <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs sm:text-sm font-bold text-white">
               <span>E quando chega a hora de oferecer sua produção?</span>
               <ArrowRight className="w-4 h-4 text-[#D9AD5B]" />
@@ -350,7 +350,7 @@ export default function HarvestProgressLine() {
       </div>
 
       {/* Divisor orgânico suave na base para conectar harmonicamente com a sétima dobra */}
-      <div className="relative w-full z-20 mt-12 sm:mt-20 -mb-[1px]">
+      <div className="relative w-full z-20 mt-8 sm:mt-12 -mb-[1px]">
         <OrganicTerrainDivider height={44} fill="#0e1511" />
       </div>
     </section>
