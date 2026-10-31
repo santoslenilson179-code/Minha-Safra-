@@ -75,7 +75,7 @@ export default function App() {
         {/* 10 — SIMPLICIDADE: Letras grandes + botões fáceis + celular */}
         <Simplicidade />
 
-        {/* 11 — OFERTA COMERCIAL: R$ 97,90 pagamento único */}
+        {/* 11 — OFERTA COMERCIAL: R$ 37,90 pagamento único */}
         <Oferta onOpenCheckout={handleOpenCheckout} />
 
         {/* 12 — FAQ: Dúvidas principais */}

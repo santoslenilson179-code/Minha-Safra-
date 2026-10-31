@@ -66,7 +66,7 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
           <div className="flex items-baseline gap-2 mb-1">
             <span className="text-2xl text-[#D9AD5B] font-extrabold">R$</span>
             <span className="text-5xl sm:text-6xl font-black text-white tabular-nums tracking-tight">
-              97,90
+              37,90
             </span>
             <span className="text-sm sm:text-base text-emerald-200 font-semibold">
               / Pagamento único

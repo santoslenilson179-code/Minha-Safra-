@@ -59,7 +59,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 <p className="text-xs text-stone-500">Pagamento único · Sem mensalidades</p>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-extrabold text-emerald-800 tabular-nums">R$ 97,90</span>
+                <span className="text-2xl font-extrabold text-emerald-800 tabular-nums">R$ 37,90</span>
               </div>
             </div>
 
