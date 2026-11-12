@@ -20,6 +20,8 @@ export default function HomeOverview() {
           src={appIconBannerImg}
           alt="Identidade e aplicativo Minha Safra em textura de alta definição"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
           style={{
             transform: isPhoneVisible ? 'scale(1.015)' : 'scale(1.04)',

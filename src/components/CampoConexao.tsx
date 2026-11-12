@@ -22,6 +22,8 @@ export default function CampoConexao() {
           src={cornHarvestSunsetImg}
           alt="Colheita noturna no campo com colheitadeira forrageira descarregando silagem em tratores com faróis iluminando a restolho sob o céu do entardecer"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-[center_38%] field-parallax-subtle transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.015)' : 'scale(1.04)',

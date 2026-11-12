@@ -22,6 +22,8 @@ export default function Beneficios() {
           src={sproutTextureImg}
           alt="Textura verde floresta com o ícone Minha Safra em relevo translúcido esmeralda"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.015)' : 'scale(1.035)',

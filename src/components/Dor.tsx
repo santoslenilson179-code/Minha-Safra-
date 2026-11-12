@@ -30,6 +30,8 @@ export default function Dor() {
             src={tractorSprayerSunsetImg}
             alt="Trator pulverizador ao pôr do sol em lavoura verde alinhada com névoa dourada de pulverização"
             referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-[center_35%]"
           />
         </div>

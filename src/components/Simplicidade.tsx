@@ -1,4 +1,4 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal, prefersReducedMotion } from '../hooks/useScrollReveal';
 import { ArrowDown } from 'lucide-react';
 import farmerSunsetPhoneImg from '../assets/images/farmer_sunset_phone_field_1790950925226.jpg';
 import { OrganicGrainTexture, TopographicLines, HarvestAccentLine } from './RuralAccents';
@@ -32,8 +32,7 @@ export default function Simplicidade() {
   const handleScrollToOferta = () => {
     const el = document.getElementById('oferta');
     if (el) {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+      el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     }
   };
 
@@ -54,6 +53,8 @@ export default function Simplicidade() {
           src={farmerSunsetPhoneImg}
           alt="Produtor rural com chapéu de palha usando o aplicativo Minha Safra no smartphone no meio da plantação ao pôr do sol dourado"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-[center_35%] transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.015)' : 'scale(1.04)',

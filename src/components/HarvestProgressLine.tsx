@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal, prefersReducedMotion } from '../hooks/useScrollReveal';
 import {
   FileSpreadsheet,
   Wheat,
@@ -95,15 +95,17 @@ export default function HarvestProgressLine() {
   });
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
+    if (prefersReducedMotion()) return;
 
-    const handleScroll = () => {
+    let rafId: number | null = null;
+
+    const updateScroll = () => {
+      rafId = null;
       const container = containerRef.current;
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+      const windowHeight = window.innerHeight || 800;
       const totalHeight = rect.height;
 
       // Calcular progresso quando a seção entra na tela
@@ -114,11 +116,19 @@ export default function HarvestProgressLine() {
       setScrollProgress(progress);
     };
 
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(updateScroll);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    updateScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -138,6 +148,8 @@ export default function HarvestProgressLine() {
           src={seederNightImg}
           alt="Abastecimento noturno no campo com guincho abastecendo plantadeira com big bag de sementes e adubo sob refletores"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-[center_40%] transition-transform duration-1000 ease-out"
           style={{
             transform: `scale(${1 + scrollProgress * 0.03})`,

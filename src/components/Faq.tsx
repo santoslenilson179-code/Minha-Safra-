@@ -52,6 +52,8 @@ export default function Faq() {
           src={yellowHarvesterImg}
           alt="Vista da plataforma da colheitadeira amarela avançando sobre as fileiras verdes de milho sob o pôr do sol dourado"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-[center_35%] transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.015)' : 'scale(1.04)',

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Sprout, ArrowDown } from 'lucide-react';
 import coffeeMistyMountainsImg from '../assets/images/coffee_mountain_mist_berries_1790944489577.jpg';
 import { OrganicGrainTexture, HarvestAccentLine, OrganicTerrainDivider } from './RuralAccents';
+import { prefersReducedMotion } from '../hooks/useScrollReveal';
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -16,8 +17,7 @@ export default function Hero() {
     window.addEventListener('resize', checkMobile, { passive: true });
 
     // Progressive enhancement: se preferir reduced motion, não rastreia scroll
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) {
+    if (prefersReducedMotion()) {
       return () => window.removeEventListener('resize', checkMobile);
     }
 
@@ -42,8 +42,7 @@ export default function Hero() {
   const handleScrollToNext = () => {
     const el = document.getElementById('dor');
     if (el) {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+      el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     }
   };
 
@@ -79,6 +78,8 @@ export default function Hero() {
           src={coffeeMistyMountainsImg}
           alt="Café vermelho maduro no cafeeiro com serras nebulosas ao fundo"
           referrerPolicy="no-referrer"
+          decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover object-[center_35%] [image-rendering:auto] contrast-[1.04] saturate-[1.06]"
           style={{
             transform: isMobile

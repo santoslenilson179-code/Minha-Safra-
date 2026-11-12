@@ -17,9 +17,27 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
   if (!isOpen) return null;
 
   const handleCopyPix = () => {
-    navigator.clipboard.writeText('00020126580014br.gov.bcb.pix0136minhasafra-app-pix-chave-20reais520400005303986540520.005802BR5920Minha Safra Oficial6009Sao Paulo62070503***6304E8A2');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 3000);
+    const pixCode =
+      '00020126580014br.gov.bcb.pix0136minhasafra-app-pix-chave-20reais520400005303986540520.005802BR5920Minha Safra Oficial6009Sao Paulo62070503***6304E8A2';
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(pixCode).catch(() => {});
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = pixCode;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    } catch {
+      // Ignore copy failure on restricted WebViews
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {

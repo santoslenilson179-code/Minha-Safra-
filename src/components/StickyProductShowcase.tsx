@@ -3,6 +3,7 @@ import { AppStepId, AppScreenView } from './AppScreenView';
 import PhoneFrame from './PhoneFrame';
 import sproutTextureImg from '../assets/images/minha_safra_sprout_texture_1790947429542.jpg';
 import { TopographicLines, OrganicGrainTexture, OrganicTerrainDivider } from './RuralAccents';
+import { prefersReducedMotion } from '../hooks/useScrollReveal';
 
 interface StepData {
   id: AppStepId;
@@ -69,20 +70,25 @@ export default function StickyProductShowcase() {
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Check prefers-reduced-motion
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) {
+    if (prefersReducedMotion()) {
       return;
     }
 
-    const handleScroll = () => {
+    let rafId: number | null = null;
+
+    const updateProgress = () => {
+      rafId = null;
+      if (window.innerWidth < 1024) {
+        return;
+      }
+
       const container = containerRef.current;
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
       const containerTop = rect.top;
       const containerHeight = rect.height;
-      const windowHeight = window.innerHeight;
+      const windowHeight = window.innerHeight || 800;
 
       // Calcular o progresso de rolagem dentro do container (0 a 1)
       const scrolled = Math.max(0, -containerTop);
@@ -109,11 +115,19 @@ export default function StickyProductShowcase() {
       setActiveStepIndex(bestIndex);
     };
 
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(updateProgress);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    updateProgress();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -135,6 +149,8 @@ export default function StickyProductShowcase() {
           src={sproutTextureImg}
           alt="Textura verde floresta com o ícone Minha Safra em relevo translúcido esmeralda"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
           style={{
             transform: `scale(${1 + scrollProgress * 0.025})`,

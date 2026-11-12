@@ -17,6 +17,8 @@ export default function Fechamento({ onOpenCheckout }: FechamentoProps) {
           src={fechamentoImg}
           alt="Paisagem de plantação rural ao entardecer"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.02)' : 'scale(1.05)',

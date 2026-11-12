@@ -3,13 +3,20 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
+  if (command === 'build') {
+    process.env.NODE_ENV = 'production';
+  }
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
+    },
+    build: {
+      target: ['es2018', 'chrome75', 'safari13', 'ios13'],
+      cssTarget: ['chrome61', 'safari11', 'ios11'],
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.

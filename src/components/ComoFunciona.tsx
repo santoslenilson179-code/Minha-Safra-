@@ -1,4 +1,4 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal, prefersReducedMotion } from '../hooks/useScrollReveal';
 import { ArrowDown } from 'lucide-react';
 import sprayerNightStarsImg from '../assets/images/sprayer_night_stars_lights_1790945533939.jpg';
 import { OrganicGrainTexture, TopographicLines, HarvestAccentLine, OrganicTerrainDivider } from './RuralAccents';
@@ -42,6 +42,8 @@ export default function ComoFunciona() {
           src={sprayerNightStarsImg}
           alt="Pulverizador agrícola trabalhando sob as estrelas na lavoura com barras iluminadas por faróis"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-[center_42%] transition-transform duration-1000 ease-out"
           style={{
             transform: isVisible ? 'scale(1.015)' : 'scale(1.04)',
@@ -163,8 +165,7 @@ export default function ComoFunciona() {
             onClick={() => {
               const el = document.getElementById('oferta');
               if (el) {
-                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+                el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
               }
             }}
             type="button"

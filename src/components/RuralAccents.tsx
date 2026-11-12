@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 // 1. Organic Grain Texture overlay for rustic/matte print feel
 export function OrganicGrainTexture({ opacity = 0.035 }: { opacity?: number }) {
@@ -25,12 +25,15 @@ export function FieldRowsPattern({
   orientation?: 'horizontal' | 'diagonal';
   stroke?: string;
 }) {
+  const uid = useId().replace(/:/g, '');
+  const patternId = `field-rows-${orientation}-${uid}`;
+
   return (
     <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`} aria-hidden="true">
       <svg className="w-full h-full opacity-60" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
-            id={`field-rows-${orientation}`}
+            id={patternId}
             width={orientation === 'horizontal' ? '100%' : '48'}
             height="32"
             patternUnits="userSpaceOnUse"
@@ -39,7 +42,7 @@ export function FieldRowsPattern({
             <line x1="0" y1="0" x2="100%" y2="0" stroke={stroke} strokeWidth="1" strokeDasharray="6 12" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill={`url(#field-rows-${orientation})`} />
+        <rect width="100%" height="100%" fill={`url(#${patternId})`} />
       </svg>
     </div>
   );

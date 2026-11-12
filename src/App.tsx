@@ -23,17 +23,27 @@ export default function App() {
 
   const handleOpenCheckout = () => {
     try {
+      const ua = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+      const isMobileOrInApp =
+        /Android|iPhone|iPad|iPod|WhatsApp|Instagram|FBAN|FBAV|Mobile/i.test(ua) ||
+        (typeof window !== 'undefined' && window.innerWidth < 768);
+
+      if (isMobileOrInApp) {
+        window.location.assign(CAKTO_CHECKOUT_URL);
+        return;
+      }
+
       const newTab = window.open(CAKTO_CHECKOUT_URL, '_blank', 'noopener,noreferrer');
       if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
-        window.location.href = CAKTO_CHECKOUT_URL;
+        window.location.assign(CAKTO_CHECKOUT_URL);
       }
     } catch {
-      window.location.href = CAKTO_CHECKOUT_URL;
+      window.location.assign(CAKTO_CHECKOUT_URL);
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 font-sans">
+    <div className="min-h-screen overflow-x-clip flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 font-sans">
       {/* Top Header */}
       <Header onOpenCheckout={handleOpenCheckout} />
 

@@ -2,19 +2,79 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#14251C" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>Minha Safra — Controle sua safra sem complicação</title>
     <meta name="description" content="Anote seus gastos, produção e vendas pelo celular e acompanhe seus números de forma simples. Feito para quem vive da produção rural." />
     <meta property="og:title" content="Minha Safra — Controle sua safra sem complicação" />
     <meta property="og:description" content="Anote seus gastos, produção e vendas pelo celular e acompanhe seus números de forma simples. Feito para quem vive da produção rural." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314251C'/%3E%3Cpath d='M32 48V28M32 28c0-9 7-15 15-15 0 9-6 15-15 15zm0 5c0-8-6-13-13-13 0 8 5 13 13 13z' stroke='%2334d399' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    </noscript>
   </head>
-  <body class="bg-[#FAF8F5] text-stone-900 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-950">
-    <div id="root"></div>
+  <body class="bg-[#14251C] text-stone-900 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-950">
+    <div id="root">
+      <div style="min-height:100vh;background:#14251C;color:#ffffff;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,-apple-system,sans-serif;text-align:center;">
+        <div>
+          <p style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-0.01em;">Minha Safra</p>
+          <p id="boot-status-text" style="margin:0;font-size:14px;color:#a7f3d0;">Carregando página...</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var shown = false;
+        function showBootFallback() {
+          if (shown || window.__MINHA_SAFRA_MOUNTED__) return;
+          shown = true;
+          var root = document.getElementById('root');
+          if (!root) return;
+          root.innerHTML =
+            '<div style="min-height:100vh;background:#14251C;color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,-apple-system,sans-serif;text-align:center;">' +
+              '<div style="max-width:400px;width:100%;background:#0B1E13;border:1px solid rgba(52,211,153,0.35);border-radius:20px;padding:28px;">' +
+                '<h1 style="margin:0 0 10px;font-size:20px;font-weight:800;">Não foi possível abrir a página automaticamente</h1>' +
+                '<p style="margin:0 0 20px;font-size:14px;line-height:1.5;color:#e7e5e4;">Verifique sua conexão com a internet ou tente recarregar em outro navegador (Chrome ou Safari).</p>' +
+                '<button id="boot-reload-btn" type="button" style="width:100%;padding:14px 20px;border:0;border-radius:12px;background:#34d399;color:#022c22;font-size:15px;font-weight:800;cursor:pointer;">Recarregar página</button>' +
+              '</div>' +
+            '</div>';
+          var btn = document.getElementById('boot-reload-btn');
+          if (btn) {
+            btn.onclick = function () {
+              try {
+                if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+                  navigator.serviceWorker.getRegistrations().then(function (regs) {
+                    for (var i = 0; i < regs.length; i++) {
+                      regs[i].unregister();
+                    }
+                  });
+                }
+              } catch (e) {}
+              var sep = window.location.href.indexOf('?') === -1 ? '?' : '&';
+              window.location.replace(window.location.pathname + sep + 'v=' + new Date().getTime() + window.location.hash);
+            };
+          }
+        }
+        window.addEventListener('error', function (e) {
+          if (!window.__MINHA_SAFRA_MOUNTED__) {
+            if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+              showBootFallback();
+            } else if (e && e.message) {
+              showBootFallback();
+            }
+          }
+        }, true);
+        setTimeout(showBootFallback, 9000);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
