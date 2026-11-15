@@ -20,6 +20,23 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     </noscript>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1461825338773094');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1461825338773094&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body class="bg-[#14251C] text-stone-900 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-950">
     <div id="root">
@@ -66,6 +83,10 @@
         window.addEventListener('error', function (e) {
           if (!window.__MINHA_SAFRA_MOUNTED__) {
             if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+              var src = e.target.src || e.target.href || '';
+              if (src.indexOf('facebook.net') !== -1 || src.indexOf('fonts.googleapis.com') !== -1) {
+                return;
+              }
               showBootFallback();
             } else if (e && e.message) {
               showBootFallback();
